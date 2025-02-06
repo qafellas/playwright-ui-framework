@@ -20,7 +20,7 @@ public class SearchPage {
     public SearchPage(Page page){
         this.page = page;
         this.searchBox = page.getByPlaceholder("Search...");
-        this.searchSubmitBtn = page.getByRole(AriaRole.BUTTON);
+        this.searchSubmitBtn = page.locator("//input[@placeholder='Search...']//..//button");
         this.listingResult = page.locator("#root");
         this.searchNavigationBtn = page.getByRole(AriaRole.LINK, new Page.GetByRoleOptions().setName("Let's get started..."));
         this.rentCheckBox = page.locator("#rent");
