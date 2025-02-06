@@ -10,6 +10,7 @@ import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
 
 import java.util.ArrayList;
+import java.util.Properties;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
@@ -21,12 +22,14 @@ public class SearchTests {
     BasePage basePage;
     LoginPage loginPage;
     SearchPage searchPage;
+    Properties prop;
 
 
     @BeforeMethod
     public void setUp() {
         basePage = new BasePage();
-        page = basePage.initializeBrowser();
+        prop = basePage.initializeProperties();
+        page = basePage.initializeBrowser(prop);
         loginPage = new LoginPage(page);
         searchPage = new SearchPage(page);
     }

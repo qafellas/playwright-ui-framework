@@ -4,11 +4,14 @@ import com.microsoft.playwright.*;
 import com.microsoft.playwright.options.AriaRole;
 import org.qafellas.pages.BasePage;
 import org.qafellas.pages.LoginPage;
+import org.qafellas.utils.ElementUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Properties;
 
 import static com.microsoft.playwright.assertions.PlaywrightAssertions.assertThat;
 
@@ -16,11 +19,13 @@ public class LoginTests {
     Page page;
     LoginPage loginPage;
     BasePage basePage;
+    Properties prop;
 
     @BeforeMethod
-    public void setUp() {
+    public void setUp(){
         basePage = new BasePage();
-        page = basePage.initializeBrowser();
+        prop = basePage.initializeProperties();
+        page = basePage.initializeBrowser(prop);
         loginPage = new LoginPage(page);
     }
 
