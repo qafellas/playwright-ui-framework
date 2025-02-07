@@ -2,6 +2,8 @@ package org.qafellas.utils;
 
 import com.microsoft.playwright.Page;
 
+import java.nio.file.Paths;
+
 public class ElementUtils {
     public Page page;
 
@@ -9,8 +11,8 @@ public class ElementUtils {
         this.page = page;
     }
 
-    public String mergeStrings(String str1, String str2){
-        return str1 + str2;
+    public void uploadFile(String fileName){
+        page.locator("[type='file']").setInputFiles(Paths.get("src/test/java/org/qafellas/data/" + fileName));
     }
 
 }
