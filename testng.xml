@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/demir/IdeaProjects/playwright-ui-framework">
+        <classes>
+            <class name="org.qafellas.tests.LoginTests">
+                <methods>
+                    <include name="shouldLoginSuccessfully"/>
+                    <include name="shouldGetInvalidPasswordNotification"/>
+                    <include name="shouldGetWarningWhenEmptyValuesEnteredForEmailPassword"/>
+                    <include name="shouldGetWarningOnNonExistEmail"/>
+                </methods>
+            </class>
+            <class name="org.qafellas.tests.SearchTests">
+                <methods>
+                    <include name="shouldSearchListingWithKeyword"/>
+                    <include name="shouldFilterOnlyRentalListings"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

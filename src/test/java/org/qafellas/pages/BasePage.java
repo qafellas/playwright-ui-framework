@@ -56,6 +56,7 @@ public class BasePage {
         }
 
         context = browser.newContext(new Browser.NewContextOptions().setViewportSize(null));
+        context.setDefaultTimeout(120000);
         page = context.newPage();
         page.navigate(url);
         return page;
